@@ -26,33 +26,41 @@ negatable = ""
 negation_char = False
 store_negated_part = False
 parenthesies = []
+endNegation = ""
 for i in range(0, len(statement)):
     char = statement[i]
-
-    if char == "(" and store_negated_part == True:
+    
+    if char == "(" and negation_char == True:
         parenthesies.append("ㄱ(")
+        #negation_char = False # turning it off so nested doesn't get impacted 
     elif char == "(":
         parenthesies.append("(")
-    if char == ")":
-        parenthesies.pop()
-    
-    if store_negated_part == True and char == ")" and not("ㄱ(" in parenthesies): # ended collection
-        negatable = negatable + char
-        negatable_statements.append(negatable)
-        store_negated_part = False
-        negatable = ""
-        negatable_statements_start.append(negatable_start)
-    elif store_negated_part == True: # add it to the character 
-        negatable = negatable + char
-    
+
     if negation_char == True and char == "(": # start storing
         negatable_start = i + 1 # where the negatable starts 
         store_negated_part = True
         negation_char = False
         negatable = ""
-    elif negation_char == True and not(char == "("): # get out of can negate mode 
+        
+    if char == ")":
+        endNegation = parenthesies.pop()
+    print(parenthesies, char, endNegation) #checking 
+    
+    if store_negated_part == True and char == ")" and endNegation == "ㄱ(": # ended collection 
+        negatable = negatable + char
+        negatable_statements.append(negatable)
+        store_negated_part = False
+        negatable = ""
+        negatable_statements_start.append(negatable_start)
+        endNegation = ""
+        print("added")
+    elif store_negated_part == True: # add it to the character 
+        negatable = negatable + char
+    '''
+    if negation_char == True and not(char == "("): # get out of can negate mode 
         negation_char = False
         store_negated_part = False
+    '''
 
     if char == "ㄱ": # start negation mode 
         negation_char = True 
@@ -100,7 +108,9 @@ for k in range(0, len(negatable_statements_andOr)):
                inside = ""
 
         if inside_parenthesies == False:
-            bird = bird + char 
+            bird = bird + char
+
+        print(parenthesies)
 
     print(sections, "sections")
 

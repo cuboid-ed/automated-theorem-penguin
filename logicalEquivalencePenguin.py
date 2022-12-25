@@ -36,7 +36,8 @@ for i in range(0, len(statement)):
     if char == ")":
         parenthesies.pop()
     
-    if store_negated_part == True and char == ")" and not("ㄱ(" in parenthesies): # ended collection 
+    if store_negated_part == True and char == ")" and not("ㄱ(" in parenthesies): # ended collection
+        negatable = negatable + char
         negatable_statements.append(negatable)
         store_negated_part = False
         negatable = ""
@@ -69,3 +70,58 @@ for j in range(0, len(negatable_statements)):
         negatable_statements_start_andOr.append(negatable_statements_start[j])
 print(negatable_statements_andOr)
 print(negatable_statements_start_andOr)
+
+# Separate into sections that would let it get a "ㄱ"
+for k in range(0, len(negatable_statements_andOr)):
+    negatable = negatable_statements_andOr[k]
+
+    sections = []
+    parenthesies = []
+    # get things inside parenthesies first
+    bird = ""
+    inside = ""
+    inside_parenthesies = False 
+    for l in range(0, len(negatable)):
+        char = negatable[l]
+
+        if inside_parenthesies == True:
+            inside = inside + char
+
+        if char == "(":
+            inside_parenthesies = True
+            parenthesies.append("(")
+            sections.append(bird)
+            bird = ""
+        elif char == ")":
+            parenthesies.pop()
+            if len(parenthesies) == 0: # if it's the closing parenthesies for the section
+               sections.append(bird)
+               inside_parenthesies = False
+               inside = ""
+
+        if inside_parenthesies == False:
+            bird = bird + char 
+
+    print(sections, "sections")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

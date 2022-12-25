@@ -2,7 +2,8 @@
 # "logical sandbox" for now
 
 
-statement = input("input: ")
+#statement = input("input: ")
+statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤq)Λ(pⅤq)Λ(pΛq))"
 
 #logical equivalences
 double_negation = False 
@@ -84,6 +85,9 @@ for i in range(0, len(negatable_statements_andOr)):
     negatable_statements_andOr[i] = negatable_statements_andOr[i][1:-1]
 print(negatable_statements_andOr)
 
+print("\n")
+print("\n")
+
 # Separate into sections that would let it get a "ㄱ"
 for k in range(0, len(negatable_statements_andOr)):
     negatable = negatable_statements_andOr[k]
@@ -118,3 +122,25 @@ for k in range(0, len(negatable_statements_andOr)):
         print(parenthesies, "bird", bird, "inside", inside)
 
     print(sections, "sections")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

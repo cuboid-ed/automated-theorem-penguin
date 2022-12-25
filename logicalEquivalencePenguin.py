@@ -44,7 +44,7 @@ for i in range(0, len(statement)):
         
     if char == ")":
         endNegation = parenthesies.pop()
-    print(parenthesies, char, endNegation) #checking 
+    #print(parenthesies, char, endNegation) #checking 
     
     if store_negated_part == True and char == ")" and endNegation == "ㄱ(": # ended collection 
         negatable = negatable + char
@@ -53,7 +53,7 @@ for i in range(0, len(statement)):
         negatable = ""
         negatable_statements_start.append(negatable_start)
         endNegation = ""
-        print("added")
+        #print("added") #checking 
     elif store_negated_part == True: # add it to the character 
         negatable = negatable + char
     '''
@@ -78,6 +78,11 @@ for j in range(0, len(negatable_statements)):
         negatable_statements_start_andOr.append(negatable_statements_start[j])
 print(negatable_statements_andOr)
 print(negatable_statements_start_andOr)
+
+# not really a step, but removing the parenthesies at the start and end
+for i in range(0, len(negatable_statements_andOr)):
+    negatable_statements_andOr[i] = negatable_statements_andOr[i][1:-1]
+print(negatable_statements_andOr)
 
 # Separate into sections that would let it get a "ㄱ"
 for k in range(0, len(negatable_statements_andOr)):
@@ -110,28 +115,6 @@ for k in range(0, len(negatable_statements_andOr)):
         if inside_parenthesies == False:
             bird = bird + char
 
-        print(parenthesies)
+        print(parenthesies, "bird", bird, "inside", inside)
 
     print(sections, "sections")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

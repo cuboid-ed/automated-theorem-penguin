@@ -24,11 +24,19 @@ negatable_statements_start = []
 negatable_start = 0 
 negatable = ""
 negation_char = False
-store_negated_part = False 
+store_negated_part = False
+parenthesies = []
 for i in range(0, len(statement)):
     char = statement[i]
+
+    if char == "(" and store_negated_part == True:
+        parenthesies.append("ㄱ(")
+    elif char == "(":
+        parenthesies.append("(")
+    if char == ")":
+        parenthesies.pop()
     
-    if store_negated_part == True and char == ")": # ended collection 
+    if store_negated_part == True and char == ")" and not("ㄱ(" in parenthesies): # ended collection 
         negatable_statements.append(negatable)
         store_negated_part = False
         negatable = ""

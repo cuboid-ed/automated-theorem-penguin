@@ -28,12 +28,12 @@ store_negated_part = False
 for i in range(0, len(statement)):
     char = statement[i]
     
-    if store_negated_part == True and char == ")":
+    if store_negated_part == True and char == ")": # ended collection 
         negatable_statements.append(negatable)
         store_negated_part = False
         negatable = ""
         negatable_statements_start.append(negatable_start)
-    elif store_negated_part == True:
+    elif store_negated_part == True: # add it to the character 
         negatable = negatable + char
     
     if negation_char == True and char == "(": # start storing
@@ -50,3 +50,14 @@ for i in range(0, len(statement)):
 
 print(negatable_statements)
 print(negatable_statements_start)
+
+# Dropping negatables with conditionals 
+negatable_statements_andOr = []
+negatable_statements_start_andOr = []
+for j in range(0, len(negatable_statements)):
+    negatable = negatable_statements[j]
+    if not(("↔" in negatable) or ("→" in negatable)):
+        negatable_statements_andOr.append(negatable)
+        negatable_statements_start_andOr.append(negatable_statements_start[j])
+print(negatable_statements_andOr)
+print(negatable_statements_start_andOr)

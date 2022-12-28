@@ -3,7 +3,8 @@
 
 
 #statement = input("input: ")
-statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤq)Λ(pⅤq)Λ(pΛq))"
+statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Λ(pΛq))"
+print(statement) # checking 
 
 #logical equivalences
 double_negation = False 
@@ -89,12 +90,14 @@ print("\n")
 print("\n")
 
 # Separate into sections that would let it get a "ㄱ"
+# like in 'aⅤq' -> 'a', 'q'
 for k in range(0, len(negatable_statements_andOr)):
     negatable = negatable_statements_andOr[k]
 
     sections = []
-    parenthesies = []
+
     # get things inside parenthesies first
+    parenthesies = []
     bird = ""
     inside = ""
     inside_parenthesies = False 
@@ -111,7 +114,7 @@ for k in range(0, len(negatable_statements_andOr)):
             bird = ""
         elif char == ")":
             parenthesies.pop()
-            if len(parenthesies) == 0: # if it's the closing parenthesies for the section
+            if 
                sections.append(bird)
                inside_parenthesies = False
                inside = ""
@@ -122,25 +125,3 @@ for k in range(0, len(negatable_statements_andOr)):
         print(parenthesies, "bird", bird, "inside", inside)
 
     print(sections, "sections")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

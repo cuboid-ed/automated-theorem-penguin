@@ -78,8 +78,8 @@ for j in range(0, len(negatable_statements)):
     if not(("↔" in negatable) or ("→" in negatable)):
         negatable_statements_andOr.append(negatable)
         negatable_statements_start_andOr.append(negatable_statements_start[j])
-print(negatable_statements_andOr)
-print(negatable_statements_start_andOr)
+print(negatable_statements_andOr) #checking 
+print(negatable_statements_start_andOr) #checking 
 
 # not really a step, but removing the parenthesies at the start and end
 for i in range(0, len(negatable_statements_andOr)):
@@ -91,6 +91,7 @@ print("\n")
 
 # Separate into sections that would let it get a "ㄱ"
 # like in 'aⅤq' -> 'a', 'q'
+negatable_statements_andOr_separted = []
 for k in range(0, len(negatable_statements_andOr)):
     negatable = negatable_statements_andOr[k]
 
@@ -118,5 +119,28 @@ for k in range(0, len(negatable_statements_andOr)):
         #print(parenthesies, "inside", inside) # checking
     # last section
     sections.append(inside)
+    negatable_statements_andOr_separted.append(sections)
 
-    print(sections, "sections")
+print(negatable_statements_andOr_separted)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

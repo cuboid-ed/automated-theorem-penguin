@@ -106,6 +106,7 @@ for k in range(0, len(negatable_statements_andOr)):
         # if there is an end to a section
         if ((char == "Λ") or (char == "Ⅴ")) and (len(parenthesies) == 0):
             sections.append(inside)
+            sections.append(char)
             inside = ""
         else:
             inside = inside + char
@@ -122,6 +123,9 @@ for k in range(0, len(negatable_statements_andOr)):
     negatable_statements_andOr_separted.append(sections)
 
 print(negatable_statements_andOr_separted)
+
+# Allocate a "ㄱ"  to each section 
+
 
 
 

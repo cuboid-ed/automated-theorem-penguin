@@ -3,7 +3,7 @@
 
 
 #statement = input("input: ")
-statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Λ(pΛq))"
+statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
 print(statement) # checking 
 
 #logical equivalences
@@ -123,9 +123,23 @@ for k in range(0, len(negatable_statements_andOr)):
     negatable_statements_andOr_separted.append(sections)
 
 print(negatable_statements_andOr_separted)
+print("\n")
+print("\n")
 
 # Allocate a "ㄱ"  to each section 
+# make sure the allocate demorgan's law once and only once
+for k in range(0, len(negatable_statements_andOr_separted)):
+    negatable = negatable_statements_andOr_separted[k]
 
+    # check if order of operations of "Λ" before "Ⅴ" needs to be applied
+    if ("Λ" in negatable) and ("Ⅴ" in negatable):
+        print(negatable) # checking
+        # now do something with parenthesies
+        negatable_and_before_or = []
+        
+    
+    for l in range(0, len(negatable)):
+        section = negatable[l]
 
 
 

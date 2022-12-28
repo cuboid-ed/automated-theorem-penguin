@@ -97,31 +97,26 @@ for k in range(0, len(negatable_statements_andOr)):
     sections = []
 
     # get things inside parenthesies first
-    parenthesies = []
-    bird = ""
-    inside = ""
-    inside_parenthesies = False 
+    parenthesies = [] 
+    inside = "" 
     for l in range(0, len(negatable)):
         char = negatable[l]
 
-        if inside_parenthesies == True:
+        # if there is an end to a section
+        if ((char == "Λ") or (char == "Ⅴ")) and (len(parenthesies) == 0):
+            sections.append(inside)
+            inside = ""
+        else:
             inside = inside + char
-
-        if char == "(":
-            inside_parenthesies = True
-            parenthesies.append("(")
-            sections.append(bird)
-            bird = ""
+            
+        # controlling parenthesies list 
+        if char == "(": 
+            parenthesies.append("(")  
         elif char == ")":
-            parenthesies.pop()
-            if 
-               sections.append(bird)
-               inside_parenthesies = False
-               inside = ""
+            parenthesies.pop() 
 
-        if inside_parenthesies == False:
-            bird = bird + char
-
-        print(parenthesies, "bird", bird, "inside", inside)
+        #print(parenthesies, "inside", inside) # checking
+    # last section
+    sections.append(inside)
 
     print(sections, "sections")

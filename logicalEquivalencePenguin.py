@@ -19,7 +19,7 @@ if "ㄱㄱ" in statement:
 push_negation = False 
 if "ㄱ(" in statement:
     push_negation = True
-    print("Negation can be pushed in")
+    print("Most nested negation can be pushed in:")
     
 # recognize each place that can get negated
 negatable_statements = []
@@ -67,10 +67,10 @@ for i in range(0, len(statement)):
 
     if char == "ㄱ": # start negation mode 
         negation_char = True 
-
+'''
 print(negatable_statements)
 print(negatable_statements_start)
-
+'''
 # Dropping negatables with conditionals 
 negatable_statements_andOr = []
 negatable_statements_start_andOr = []
@@ -79,17 +79,18 @@ for j in range(0, len(negatable_statements)):
     if not(("↔" in negatable) or ("→" in negatable)):
         negatable_statements_andOr.append(negatable)
         negatable_statements_start_andOr.append(negatable_statements_start[j])
+'''
 print(negatable_statements_andOr) #checking 
 print(negatable_statements_start_andOr) #checking 
-
+'''
 # not really a step, but removing the parenthesies at the start and end
 for i in range(0, len(negatable_statements_andOr)):
     negatable_statements_andOr[i] = negatable_statements_andOr[i][1:-1]
+'''
 print(negatable_statements_andOr)
-
 print("\n")
 print("\n")
-
+'''
 # Separate into sections that would let it get a "ㄱ"
 # like in 'aⅤq' -> 'a', 'Ⅴ', 'q'
 negatable_statements_andOr_separted = []
@@ -122,19 +123,18 @@ for k in range(0, len(negatable_statements_andOr)):
     # last section
     sections.append(inside)
     negatable_statements_andOr_separted.append(sections)
-
+'''
 print(negatable_statements_andOr_separted, "Separate into sections that would let it get a 'ㄱ'")
 print("\n")
 print("\n")
+'''
 
 ### Allocate a "ㄱ"  to each section
 # check if order of operations of "Λ" before "Ⅴ" needs to be applied
 for k in range(0, len(negatable_statements_andOr_separted)):
     negatable = negatable_statements_andOr_separted[k]
 
-    if ("Λ" in negatable) and ("Ⅴ" in negatable):
-        print(negatable, "negatable") 
-
+    if ("Λ" in negatable) and ("Ⅴ" in negatable): 
         negatable_and_before_or = []
         inside_and = False
         and_part = ""
@@ -161,10 +161,11 @@ for k in range(0, len(negatable_statements_andOr_separted)):
             and_part = and_part + ")" # last parenthesies
             negatable_and_before_or.append(and_part)
         negatable_statements_andOr_separted[k] = negatable_and_before_or
-
+'''
 print(negatable_statements_andOr_separted, "and before or")
 print("\n")
 print("\n")
+'''
 
 # make sure the allocate demorgan's law once and only once
 negatables_negataed = []
@@ -187,13 +188,13 @@ for k in range(0, len(negatable_statements_andOr_separted)):
             negatable_after_demorgans_law.append("ㄱ" + part)
     #print(negatable_after_demorgans_law)
     negatables_negataed.append(negatable_after_demorgans_law)
-print(negatables_negataed, "after demorgans")
-    
+'''print(negatables_negataed, "after demorgans")'''
+
 ### combine the lists after allocated negataions 
 negatables_negataed_string = []
 for lst in negatables_negataed:
     negatables_negataed_string.append(''.join(lst))
-print(negatables_negataed_string)
+'''print(negatables_negataed_string)'''
 
 ### replacing it in initial statement
 '''
@@ -204,7 +205,7 @@ for i in range(len(negatables_negataed_string)):
     front = statement[:(negatable_statements_start_andOr[i] - 2)]
     end = statement[(negatable_statements_start_andOr[i] + len(negatable_statements_andOr[i]) + 1):]
     after_negation_statement = front + negatables_negataed_string[i] + end
-    print(negatables_negataed_string[i], after_negation_statement)
+    print(negatable_statements_andOr[i], ":", after_negation_statement)
 
 
 

@@ -3,9 +3,7 @@
 
 
 #statement = input("input: ")
-statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
-statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
-statement = ?ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
+statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))" 
 #statement = "ㄱ(aΛbⅤc)"
 print(statement) # checking 
 

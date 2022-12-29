@@ -2,17 +2,31 @@
 '''
 () paren
 ㄱ not 
-Λand 
+↔and 
 Ⅴor 
 → implies
 ↔ biconditional 
 '''
 
+statement = "ㄱ(ㄱ(ㄱㄱb→(aΛbΛcⅤa→dΛeΛf))Ⅴa↔ㄱpΛq→qⅤㄱsⅤ(sⅤr)Λㄱ(sΛv→p))"
+print(statement) # checking
 
-statement = input("input: ")
-#statement = "ㄱ(aΛq)ΛㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))" 
-#statement = "ㄱ(aΛbⅤc)"
-print(statement) # checking 
+# need to build up rather than going through linearly wheee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def addParenForParen(operators, statement):
     '''
@@ -31,3 +45,4 @@ def addParenForParen(operators, statement):
 def addParenForOpearator(operator):
     ''' adds parenthesies for a given operator 
     '''
+

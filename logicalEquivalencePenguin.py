@@ -189,8 +189,22 @@ for k in range(0, len(negatable_statements_andOr_separted)):
     negatables_negataed.append(negatable_after_demorgans_law)
 print(negatables_negataed, "after demorgans")
     
-        
+### combine the lists after allocated negataions 
+negatables_negataed_string = []
+for lst in negatables_negataed:
+    negatables_negataed_string.append(''.join(lst))
+print(negatables_negataed_string)
 
+### replacing it in initial statement
+'''
+print(negatable_statements_andOr) #checking 
+print(negatable_statements_start_andOr) #checking
+'''
+for i in range(len(negatables_negataed_string)):
+    front = statement[:(negatable_statements_start_andOr[i] - 2)]
+    end = statement[(negatable_statements_start_andOr[i] + len(negatable_statements_andOr[i]) + 1):]
+    after_negation_statement = front + negatables_negataed_string[i] + end
+    print(negatables_negataed_string[i], after_negation_statement)
 
 
 

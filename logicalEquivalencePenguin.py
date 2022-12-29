@@ -3,7 +3,7 @@
 
 
 #statement = input("input: ")
-statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))" 
+statement = "ㄱ(aΛq)ΛㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))" 
 #statement = "ㄱ(aΛbⅤc)"
 print(statement) # checking 
 
@@ -167,10 +167,19 @@ print(negatable_statements_andOr_separted)
 # make sure the allocate demorgan's law once and only once
 for k in range(0, len(negatable_statements_andOr_separted)):
     negatable = negatable_statements_andOr_separted[k]
-        
+
     
-    for l in range(0, len(negatable)):
-        section = negatable[l]
+    if "Λ" in negatable:
+        operator = "Λ"
+        antioperator = "Ⅴ"
+    else:
+        operator = "Ⅴ"
+        antioperator = "Λ"
+
+    negatable_after_demorgans_law = []
+    for part in negatable:
+        if 
+        
 
 
 

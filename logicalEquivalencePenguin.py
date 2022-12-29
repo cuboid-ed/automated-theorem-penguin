@@ -2,8 +2,8 @@
 # "logical sandbox" for now
 
 
-#statement = input("input: ")
-statement = "ㄱ(aΛq)ΛㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))" 
+statement = input("input: ")
+#statement = "ㄱ(aΛq)ΛㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))" 
 #statement = "ㄱ(aΛbⅤc)"
 print(statement) # checking 
 
@@ -206,24 +206,4 @@ for i in range(len(negatables_negataed_string)):
     end = statement[(negatable_statements_start_andOr[i] + len(negatable_statements_andOr[i]) + 1):]
     after_negation_statement = front + negatables_negataed_string[i] + end
     print(negatable_statements_andOr[i], ":", after_negation_statement)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

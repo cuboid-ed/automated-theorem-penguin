@@ -155,16 +155,19 @@ for k in range(0, len(negatable_statements_andOr_separted)):
                 and_part = and_part + part
             else:
                 negatable_and_before_or.append(part)
-            print("inside_and", inside_and, "and_part", and_part)
+            #print("inside_and", inside_and, "and_part", and_part)
         # add the last section if it wasn't stopped by an or
         if (and_part != ""):
             and_part = and_part + ")" # last parenthesies
             negatable_and_before_or.append(and_part)
         negatable_statements_andOr_separted[k] = negatable_and_before_or
 
-print(negatable_statements_andOr_separted)
+print(negatable_statements_andOr_separted, "and before or")
+print("\n")
+print("\n")
 
 # make sure the allocate demorgan's law once and only once
+negatables_negataed = []
 for k in range(0, len(negatable_statements_andOr_separted)):
     negatable = negatable_statements_andOr_separted[k]
 
@@ -178,7 +181,14 @@ for k in range(0, len(negatable_statements_andOr_separted)):
 
     negatable_after_demorgans_law = []
     for part in negatable:
-        if 
+        if part == operator:
+            negatable_after_demorgans_law.append(antioperator)
+        else:
+            negatable_after_demorgans_law.append("ㄱ" + part)
+    #print(negatable_after_demorgans_law)
+    negatables_negataed.append(negatable_after_demorgans_law)
+print(negatables_negataed, "after demorgans")
+    
         
 
 

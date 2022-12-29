@@ -3,7 +3,8 @@
 
 
 #statement = input("input: ")
-statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
+#statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
+statement = "ㄱ(aΛbⅤcΛdⅤe)"
 print(statement) # checking 
 
 #logical equivalences
@@ -126,39 +127,47 @@ print(negatable_statements_andOr_separted)
 print("\n")
 print("\n")
 
-# Allocate a "ㄱ"  to each section 
-# make sure the allocate demorgan's law once and only once
+### Allocate a "ㄱ"  to each section
+# check if order of operations of "Λ" before "Ⅴ" needs to be applied
 for k in range(0, len(negatable_statements_andOr_separted)):
     negatable = negatable_statements_andOr_separted[k]
 
-    # check if order of operations of "Λ" before "Ⅴ" needs to be applied
     if ("Λ" in negatable) and ("Ⅴ" in negatable):
-        print(negatable) # checking
-        # now do something with parenthesies
+        print(negatable, "negatable") 
+
         negatable_and_before_or = []
+        inside_and = False
+        and_part = ""
+        for i in range(0, len(negatable)):
+            part = negatable[i]
+
+            if (inside_and == False) and (part == "Λ"): # start the and statement 
+                inside_and = True
+                and_part = "(" + negatable[i - 1] + "Λ"
+                del negatable_and_before_or[-1]
+            elif (inside_and == True) and (part == "Ⅴ"): # end since encountered an or
+                inside_and = False
+                and_part = and_part + ")" # last parenthesies 
+                negatable_and_before_or.append(and_part)
+                and_part = ""
+                negatable_and_before_or.append("Ⅴ") # don't forget to add the or 
+            elif inside_and == True:
+                and_part = and_part + part
+            else:
+                negatable_and_before_or.append(part)
+            print("inside_and", inside_and, "and_part", and_part)
+        # add the last section if it wasn't stopped by an or
+        if (and_part != ""):
+            and_part = and_part + ")" # last parenthesies
+            negatable_and_before_or.append(and_part)
+        negatable_statements_andOr_separted[k] = negatable_and_before_or
+
+print(negatable_statements_andOr_separted)
+
+# make sure the allocate demorgan's law once and only once
+for k in range(0, len(negatable_statements_andOr_separted)):
+    negatable = negatable_statements_andOr_separted[k]
         
     
     for l in range(0, len(negatable)):
         section = negatable[l]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,8 +3,10 @@
 
 
 #statement = input("input: ")
-#statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
-statement = "ㄱ(aΛbⅤcΛdⅤe)"
+statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
+statement = "ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
+statement = ?ㄱqΛㄱ(ㄱ(aⅤq)ΛpΛㄱ((pΛq)Ⅴs)Λp)Λㄱ(s→q)Λㄱ((aⅤ(aΛb))Λ(pⅤq)Ⅴ(pΛq)Λ(pⅤs)Λ(pⅤk))"
+#statement = "ㄱ(aΛbⅤc)"
 print(statement) # checking 
 
 #logical equivalences
@@ -91,7 +93,7 @@ print("\n")
 print("\n")
 
 # Separate into sections that would let it get a "ㄱ"
-# like in 'aⅤq' -> 'a', 'q'
+# like in 'aⅤq' -> 'a', 'Ⅴ', 'q'
 negatable_statements_andOr_separted = []
 for k in range(0, len(negatable_statements_andOr)):
     negatable = negatable_statements_andOr[k]
@@ -123,7 +125,7 @@ for k in range(0, len(negatable_statements_andOr)):
     sections.append(inside)
     negatable_statements_andOr_separted.append(sections)
 
-print(negatable_statements_andOr_separted)
+print(negatable_statements_andOr_separted, "Separate into sections that would let it get a 'ㄱ'")
 print("\n")
 print("\n")
 
@@ -171,3 +173,25 @@ for k in range(0, len(negatable_statements_andOr_separted)):
     
     for l in range(0, len(negatable)):
         section = negatable[l]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

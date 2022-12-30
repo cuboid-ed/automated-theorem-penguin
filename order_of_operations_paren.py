@@ -8,6 +8,8 @@
 ↔ biconditional 
 '''
 
+operators = ['ㄱ', 'Λ', 'Ⅴ', '→', '↔']
+
 statement = "ㄱ(ㄱ(ㄱㄱb→(aΛbΛcⅤa→dΛeΛf))Ⅴa↔ㄱpΛq→qⅤㄱsⅤ(sⅤr)Λㄱ(sΛv→p))"
 print(statement) # checking
 

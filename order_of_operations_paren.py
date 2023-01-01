@@ -8,8 +8,10 @@
 ↔ biconditional 
 '''
 
+# list of operators in order of their priority in logic
 operators = ['ㄱ', 'Λ', 'Ⅴ', '→', '↔']
 
+# statement = input("input: ")
 statement = "ㄱ(ㄱ(ㄱㄱb→(aΛbΛcⅤa→dΛeΛf))Ⅴa↔ㄱpΛq→qⅤㄱsⅤ(sⅤr)Λㄱ(sΛv→p))"
 print(statement) # checking
 
@@ -47,4 +49,3 @@ def addParenForParen(operators, statement):
 def addParenForOpearator(operator):
     ''' adds parenthesies for a given operator 
     '''
-

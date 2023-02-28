@@ -39,7 +39,7 @@ def addParenForParen(operators, statement):
     operators = ['ㄱ', 'Λ', 'Ⅴ', '→', '↔']
     '''
     paren = []
-    for i in 
+    for i in statement:
     # controlling parenthesies list 
         if char == "(": 
             paren.append("(")  
